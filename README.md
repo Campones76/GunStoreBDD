@@ -16,8 +16,11 @@ To run and contribute to this project, ensure you have the following tools and d
 
 - [PyCharm IDE](https://www.jetbrains.com/pycharm/) (Recommended) or [Visual Studio Code](https://code.visualstudio.com/)
 - [Python](https://www.python.org/) (Install the latest version)
-- [Django](https://www.djangoproject.com/) (Install using `pip install django`)
-- Django SQL Driver (Install using `pip install mssql-django`)
+- [Django](https://www.djangoproject.com/) (Install using ```bash pip install django```)
+- [Django REST framework](https://www.django-rest-framework.org/) (Install using ```bash pip install djangorestframework```)
+- [Django SQL Driver](https://pypi.org/project/mssql-django/) (Install using ```bash pip install mssql-django```)
+- [Markdown support for the browsable API](https://pypi.org/project/markdown/) (Install using ```bash pip install markdown```)
+- [Filtering support for Django](https://pypi.org/project/django-filter/) (Install using ```bash pip install django-filter```)
 
 ### Setting Up the Development Environment
 
