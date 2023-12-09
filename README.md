@@ -7,20 +7,16 @@ GunShopBDD is a project developed for our database class, focusing on the functi
 ## Technologies Used
 
 - Python
-- Django
+- Flask
 - Microsoft SQL
 
 ## Requirements
 
 To run and contribute to this project, ensure you have the following tools and dependencies installed:
 
-- [PyCharm IDE](https://www.jetbrains.com/pycharm/) (Recommended) or [Visual Studio Code](https://code.visualstudio.com/)
-- [Python](https://www.python.org/) (Install the latest version)
-- [Django](https://www.djangoproject.com/) (Install using `pip install django`)
-- [Django REST framework](https://www.django-rest-framework.org/) (Install using `pip install djangorestframework`)
-- [Django SQL Driver](https://pypi.org/project/mssql-django/) (Install using ```bash pip install mssql-django```)
-- [Markdown support for the browsable API](https://pypi.org/project/markdown/) (Install using `pip install markdown`)
-- [Filtering support for Django](https://pypi.org/project/django-filter/) (Install using `pip install django-filter`)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Python](https://www.python.org/) (Install the 3.9.8 version)
+- [Flask](https://flask.palletsprojects.com/en/3.0.x/) (Install using `pip install Flask`)
 
 ### Setting Up the Development Environment
 
@@ -34,9 +30,6 @@ To run and contribute to this project, ensure you have the following tools and d
    ```bash
    pip install -r requirements.txt
    
-3. Run the Django development server:
-   ```bash
-   python manage.py runserver
 
 Remember:
 Replace "your-username" in the clone URL with your actual GitHub username.
