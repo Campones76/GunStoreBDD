@@ -17,6 +17,7 @@ To run and contribute to this project, ensure you have the following tools and d
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Python](https://www.python.org/) (Install the 3.9.8 version)
 - [Flask](https://flask.palletsprojects.com/en/3.0.x/) (Install using `pip install Flask`)
+- [Pypyodbc](https://github.com/pypyodbc/pypyodbc) (Install using `pip install pypyodbc`)
 
 ### Setting Up the Development Environment
 
