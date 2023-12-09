@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Armas</title>
+    <link rel="stylesheet" href="/static/styles/globals.css" />
+</head>
+<body>
+    <div class="navbar show-menu">
+        <div class="header-inner-content "> 
+            <h1 class="logo"> LOJA DE <span>ARMAS</span> </h1>
+            <nav>
+                <ul>
+                    <li>HOME</li>
+                    <li>PRODUTOS</li>
+                    <li>SOBRE</li>
+                    <li>CONTACTO</li>
+                    <li>CONTA</li>
+                </ul>
+            </nav>
+            <div class="nav-icon-container" >
+                <img src="/static/images/cart.png" />
+                <img src="/static/images/menu.png" class="menu-button" />
+            </div>
+         </div>   
+    </div>
+    <header>
+            <div class="header-inner-content"> 
+            <div class="header-bottom-side">
+            <div class="header-bottom-side-left">
+                <h2> Glock .40 G23 </h2>
+                <p>
+                    A Glock é uma série de pistolas semiautomáticas com armação de polímero,
+                     com sistema de funcionamento por curto recuo basculante do cano
+                
+                </p>
+                <a href="{{ url_for('teste') }}"><button>Ver Agora &#8594;</button></a>
+            </div> 
+            <div class="header-bottom-side-right">
+                <img src="/static/images/glock3.png" alt="" />
+            </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="gray-background"> 
+            <div class="page-inner-content">
+                <div class="">
+                    <img src="images/ak47.png" alt="" />
+               
+                    
+                </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const navbar = document.querySelector (".navbar");
+        const menuButton = document.querySelector (".menu-button");
+
+        menuButton.addEventListener("click", () => {
+            navbar.classList.toggle("show-menu");
+
+        });
+    </script>
+</body>
+</html>
