@@ -1,14 +1,9 @@
-import pypyodbc as odbc 
-from flask import Flask, jsonify, render_template
+import pypyodbc as odbc
+from flask import Blueprint, jsonify, render_template
 
-app = Flask(__name__)
+dbteste_bp = Blueprint('dbteste', __name__)
 
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-@app.route('/teste')
+@dbteste_bp.route('/teste')
 def teste():
     # Your database connection and query logic here
     DRIVER_NAME = 'SQL SERVER'
@@ -33,6 +28,3 @@ def teste():
     conn.close()
 
     return jsonify(data)
-
-if __name__ == '__main__':
-    app.run(debug=True)
