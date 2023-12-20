@@ -49,6 +49,8 @@ To run and contribute to this project, ensure you have the following tools and d
 
       8. If for any reason you get a similar error to "cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at..." then you need to open a PS(powershell) admin window and type the following command "Set-ExecutionPolicy RemoteSigned" close VS PS terminal window currently opened and open new one and it should begin to login into your enviroment automatically.
 
+      9. Be careful because history restored terminals won't be running the enviroment so it's recomended to create a new terminal window when you start vscode
+
 3. Installing dependecies:
 
    ```bash
