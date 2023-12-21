@@ -75,6 +75,14 @@ nav ul li:hover{
     
 }
 
+ul li a {
+    display: block;
+    color: #fff;
+    width: 100%;
+    text-decoration: none;
+    padding: 5px;
+  }
+
 .menu-button{
     display: none;
 }
