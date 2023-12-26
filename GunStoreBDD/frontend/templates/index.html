@@ -16,7 +16,13 @@
                     <li>PRODUTOS</li>
                     <li>SOBRE</li>
                     <li>CONTACTO</li>
-                    <li><a href="{{url_for('AccountStateView.accountstate')}}">CONTA</a></li>
+                    <li>
+                        {% if current_user.is_authenticated %}
+                            <a href="{{url_for('AccountStateView.accountstate')}}">CONTA</a>
+                        {% else %}
+                            <a href="{{url_for('SignupView.register')}}">CRIAR CONTA</a>
+                        {% endif %}
+                    </li>
                 </ul>
             </nav>
             <div class="nav-icon-container" >

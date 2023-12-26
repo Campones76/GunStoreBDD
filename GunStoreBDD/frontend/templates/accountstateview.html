@@ -3,12 +3,19 @@
 <head>
     <title>Account Page</title>
 </head>
-<body>
-    <form action="/login" method="post">
-        <input type="submit" value="Login">
-    </form>
-    <form action="/register" method="post">
-        <input type="submit" value="Signup">
-    </form>
+<body>                        
+    {% if current_user.is_authenticated %}
+        <form action="/login/logout">
+            <input type="submit" value="Logout">
+        </form>
+        <a href="{{url_for('adminchecker.check')}}">check</a>
+    {% else %}
+        <form action="/login" method="post">
+            <input type="submit" value="Login">
+        </form>
+        <form action="/register" method="post">
+            <input type="submit" value="Signup">
+        </form>
+    {% endif %}
 </body>
 </html>
