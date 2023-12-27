@@ -14,7 +14,8 @@ rectangle "Gun Store" {
   usecase "Create Account" as UC2
   usecase "Make Purchase" as UC3
   usecase "Renew License" as UC4
-  usecase "Manage Inventory" as UC5
+  usecase "Warn customer about license renewal" as UC5
+  usecase "Manage Inventory" as UC6
 
   c --> UC1
   c --> UC2
@@ -23,6 +24,6 @@ rectangle "Gun Store" {
 
   s --> UC3
   s --> UC5
+  s --> UC6
 }
-
 @enduml
