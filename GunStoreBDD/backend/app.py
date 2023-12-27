@@ -1,5 +1,6 @@
 import os
 from flask import Flask
+from flask_bcrypt import Bcrypt
 from backend.views.home import *
 from backend.views.AccountStateView import *
 from backend.views.SigninView import *
@@ -10,6 +11,7 @@ from backend.views.adminchecker import *
 
 
 app = Flask(__name__, template_folder='../frontend/templates', static_folder='../frontend/static')
+bcrypt = Bcrypt(app)
 login_manager.init_app(app)
 @app.context_processor
 def inject_user():

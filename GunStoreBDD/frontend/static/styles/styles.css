@@ -55,12 +55,19 @@ body {
     background-color:brown;
     color: #ffffff;
 }
-.login form input[type="password"], .login form input[type="text"], .login form input[type="email"], .register form input[type="password"], .register form input[type="text"], .register form input[type="email"] {
+.login form input[type="password"], .login form input[type="text"], .login form input[type="email"], .register form input[type="password"], .register form input[type="text"], .register form input[type="email"],
+.login form input[type="date"], .register form input[type="date"], .login form input[type="tel"], .register form input[type="tel"] {
     width: 310px;
     height: 50px;
     border: 1px solid #dee0e4;
     margin-bottom: 20px;
     padding: 0 15px;
+}
+.login form input[type="tel"], .register form input[type="tel"] {
+    padding-left: 52px; /* Adjust this value as needed */
+}
+.login form input[name="contact"], .register form input[name="contact"] {
+    margin-bottom: 40px; /* Adjust this value as needed */
 }
 .login form input[type="submit"], .register form input[type="submit"] {
     width: 100%;
@@ -115,4 +122,7 @@ body {
 }
 body.loggedin {
     background-color: #f3f4f7;
+}
+.input-wrapper {
+    margin-bottom: 20px; /* Adjust this value as needed */
 }
