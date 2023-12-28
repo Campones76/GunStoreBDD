@@ -25,6 +25,7 @@ def register():
         tin = request.form['tin']
         Staff = 0
         HasLicense = 0
+        Deactivated = 0
         full_number = '+' + countrycode + contact
         print(full_number)
         print(full_number)
@@ -58,7 +59,7 @@ def register():
             #cursor.execute('INSERT INTO dbo.Admin VALUES (?, ?, ?, ?)', (username, password, email, staff,))
             # Hash the password before storing it
             hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
-            cursor.execute('INSERT INTO dbo.Customer VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (username, fullname, dob, email, hashed_password, address, full_number, tin, Staff, HasLicense))
+            cursor.execute('INSERT INTO dbo.Customer VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (username, fullname, dob, email, hashed_password, address, full_number, tin, Staff, HasLicense, Deactivated))
             #cursor.execute('INSERT INTO dbo.Admin VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', (username, password, email, fullname, dob, address, contact, tin, staff,))
             cursor.commit()
             msg = 'You have successfully registered!'

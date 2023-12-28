@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Armas</title>
+    <link rel="stylesheet" href="/static/styles/globals.css" />
+</head>
+<body>
+    <div class="navbar show-menu">
+        <div class="header-inner-content "> 
+            <h1 class="logo"> LOJA DE <span>ARMAS</span> </h1>
+            <nav>
+                <ul>
+                    <li>
+                        {% if current_user.is_authenticated and current_user.Staff %}
+                        <a href="{{url_for('AccountStateView.accountstate')}}">VENDAS</a>
+                        {% else %}
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if current_user.is_authenticated and current_user.Staff %}
+                        <a href="{{url_for('AccountStateView.accountstate')}}">STAFF</a>
+                        {% else %}
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if current_user.is_authenticated and current_user.Staff %}
+                        <a href="{{url_for('AccountStateView.accountstate')}}">STAFF</a>
+                        {% else %}
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if current_user.is_authenticated and current_user.Staff %}
+                        <a href="{{url_for('AccountStateView.accountstate')}}">STAFF</a>
+                        {% else %}
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if current_user.is_authenticated and current_user.Staff %}
+                        <a href="{{url_for('home.index')}}">Sair</a>
+                        {% else %}
+                        {% endif %}
+                    </li>
+                </ul>
+            </nav>
+            <div class="nav-icon-container" >
+                <img src="/static/images/cart.png" />
+                <img src="/static/images/menu.png" class="menu-button" />
+            </div>
+         </div>   
+    </div>
+
+    <script>
+        const navbar = document.querySelector (".navbar");
+        const menuButton = document.querySelector (".menu-button");
+
+        menuButton.addEventListener("click", () => {
+            navbar.classList.toggle("show-menu");
+
+        });
+    </script>
+</body>
+</html>

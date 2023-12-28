@@ -23,6 +23,12 @@
                             <a href="{{url_for('SignupView.register')}}">CRIAR CONTA</a>
                         {% endif %}
                     </li>
+                    <li>
+                        {% if current_user.is_authenticated and current_user.Staff %}
+                        <a href="{{url_for('StaffPanel.staffpanel')}}">STAFF</a>
+                        {% else %}
+                        {% endif %}
+                    </li>
                 </ul>
             </nav>
             <div class="nav-icon-container" >
@@ -54,7 +60,7 @@
         <div class="gray-background"> 
             <div class="page-inner-content">
                 <div class="">
-                    <img src="images/ak47.png" alt="" />
+                    <img src="/static/images/ak47.png" alt="" />
                
                     
                 </div>

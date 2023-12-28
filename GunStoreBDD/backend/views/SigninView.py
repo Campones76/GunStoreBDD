@@ -36,14 +36,17 @@ def login():
         cursor = conn.cursor()
         cursor.execute('SELECT * FROM dbo.Customer WHERE UserName = ?', (username,))
         account = cursor.fetchone()
-        if account and bcrypt.check_password_hash(account.Password, password):
-            user = User(account.CustomerID, Staff=account.Staff)
-            login_user(user)
-            #return 'Logged in successfully!'
-            return render_template('index.html')
-        else:
-            msg = 'Incorrect username/password!'
-            return render_template('signin.html', msg=msg)
+        if account:
+            if account.Deactivated == 1:
+                msg = 'This user account was deactivated and its personal data removed because the user made a GDPR takedown request.'
+                return render_template('signin.html', msg=msg)
+            elif bcrypt.check_password_hash(account.Password, password):
+                user = User(account.CustomerID, Staff=account.Staff)
+                login_user(user)
+                return redirect(url_for('home.index'))
+            else:
+                msg = 'Incorrect username/password!'
+                return render_template('signin.html', msg=msg)
     return render_template('signin.html', msg='')
 
 @signin_bp.route('/login/logout')

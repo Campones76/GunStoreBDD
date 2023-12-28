@@ -8,6 +8,9 @@
         <form action="/login/logout">
             <input type="submit" value="Logout">
         </form>
+        <form action="/delete_account" method="post">
+            <input type="submit" value="Delete">
+        </form>
         <a href="{{url_for('adminchecker.check')}}">check</a>
     {% else %}
         <form action="/login" method="post">
@@ -15,6 +18,9 @@
         </form>
         <form action="/register" method="post">
             <input type="submit" value="Signup">
+        </form>
+        <form action="/delete_account" method="post">
+            <input type="submit" value="Delete">
         </form>
     {% endif %}
 </body>

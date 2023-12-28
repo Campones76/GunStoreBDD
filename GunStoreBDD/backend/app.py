@@ -5,9 +5,9 @@ from backend.views.home import *
 from backend.views.AccountStateView import *
 from backend.views.SigninView import *
 from backend.views.SignupView import *
-from backend.views.dbteste import *
 from backend.views.TosView import *
 from backend.views.adminchecker import *
+from backend.views.StaffPanel import *
 
 
 app = Flask(__name__, template_folder='../frontend/templates', static_folder='../frontend/static')
@@ -26,9 +26,9 @@ app.register_blueprint(home_bp)
 app.register_blueprint(accountstate_bp)
 app.register_blueprint(signin_bp)
 app.register_blueprint(signup_bp)
-app.register_blueprint(dbteste_bp)
 app.register_blueprint(tosviewer_bp)
 app.register_blueprint(adminchecker_bp)
+app.register_blueprint(StaffPanel_bp)
 
 if __name__ == '__main__':
     app.run(debug=True)
