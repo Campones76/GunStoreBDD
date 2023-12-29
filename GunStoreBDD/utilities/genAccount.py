@@ -16,3 +16,10 @@ print(f"Address: {address}")
 print(f"Phone Number: {phone_number}")
 print(f"Birthday: {birthday}")
 print(f"Email: {email}")
+
+def generate_phone_number(country):
+    fake = Faker(country)
+    return fake.phone_number()
+
+
+print(generate_phone_number('nl_BE'))
