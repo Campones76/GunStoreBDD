@@ -8,7 +8,9 @@ from backend.views.SignupView import *
 from backend.views.TosView import *
 from backend.views.adminchecker import *
 from backend.views.StaffPanel import *
-
+from backend.views.SalesView import *
+from backend.views.LicenseRenewalView import *
+from backend.views.InventoryView import *
 
 app = Flask(__name__, template_folder='../frontend/templates', static_folder='../frontend/static')
 bcrypt = Bcrypt(app)
@@ -29,6 +31,8 @@ app.register_blueprint(signup_bp)
 app.register_blueprint(tosviewer_bp)
 app.register_blueprint(adminchecker_bp)
 app.register_blueprint(StaffPanel_bp)
-
+app.register_blueprint(salesview_bp)
+app.register_blueprint(license_renewal_bp)
+app.register_blueprint(InventoryView_bp)
 if __name__ == '__main__':
     app.run(debug=True)
