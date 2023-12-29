@@ -14,19 +14,6 @@ def accountstate():
 conn = pyodbc.connect(connection_string)
 cursor = conn.cursor()
 
-# @accountstate_bp.route('/delete_account', methods=['POST'])
-# @login_required
-# def delete_account():
-#     user_id = current_user.id  # assuming you have access to current_user.id
-#     # pseudonymize user data
-#     cursor.execute("""
-#         UPDATE dbo.Customer
-#         SET UserName = 'XXXXX', FullName = 'XXXXX', Email = 'XXXXX@GDPRrequest.eu', DateOfBirth = NULL, Password = 'XXXXX', Address = 'XXXXX', Contact = 'XXXXX', Deactivated = 'True'
-#         WHERE CustomerID = ?
-#     """, user_id)
-#     conn.commit()
-#     return redirect(url_for('home.index'))  # or wherever you want to redirect users after account deletion
-
 @accountstate_bp.route('/delete_account', methods=['POST'])
 @login_required
 def delete_account():
