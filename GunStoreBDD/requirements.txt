@@ -5,3 +5,4 @@ Flask_Login==0.6.3
 gubbins==0.0.3
 nifverifier==0.0.1
 pyodbc==5.0.1
+pandas==2.1.4
