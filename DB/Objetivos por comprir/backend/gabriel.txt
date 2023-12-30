@@ -1,0 +1,5 @@
+delete from inventory
+add camps that send data to the security db (audit of weapons)
+add sales feature (we'll need the firearms table, we'll save the transacting in the transactions table (we'll allow to view the transaction from the user profile that'll appear in the sales view page) and we'll also get the useres license (if he has one) and will save the expiry date in the license renewal table. and well change the nif number the id number to the user's and not the stores and in the end it'll be sent to the customers fire arms table
+
+

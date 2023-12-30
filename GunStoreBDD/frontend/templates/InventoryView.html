@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja de Armas</title>
     <link rel="stylesheet" href="/static/styles/globals.css" />
+    <link rel="stylesheet" href="/static/styles/tables.css" />
+
 </head>
 <body>
     <div class="navbar show-menu">
@@ -14,7 +16,7 @@
                 <ul>
                     <li>
                         {% if current_user.is_authenticated and current_user.Staff %}
-                        <a href="{{url_for('SelectUser.select_user')}}">VENDAS</a>
+                        <a href="{{url_for('SalesView.sales')}}">VENDAS</a>
                         {% endif %}
                     </li>
                     <li>
@@ -24,7 +26,7 @@
                     </li>
                     <li>
                         {% if current_user.is_authenticated and current_user.Staff %}
-                        <a href="{{url_for('InventoryView.inventory')}}">GERIR INVENTÁRIO</a>
+                        <a href="{{url_for('AddInventoryView.add_inventory')}}">ADICIONAR INVENTÁRIO</a>
                         {% endif %}
                     </li>
                     <li>
@@ -47,6 +49,28 @@
          </div>   
     </div>
 
+    <table>
+        <tr>
+            <th>SerialNum</th>
+            <th>Type</th>
+            <th>Maker & Model</th>
+            <th>Calibre</th>
+            <th>DateOfPurchase</th>
+            <th>OwnershipJustification</th>
+            <th>StorageDetails</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row.SerialNum }}</td>
+            <td>{{ row.Type }}</td>
+            <td>{{ row.Maker_Model }}</td>
+            <td>{{ row.Calibre }}</td>
+            <td>{{ row.DateOfPurchase }}</td>
+            <td>{{ row.OwnershipJustification }}</td>
+            <td>{{ row.StorageDetails }}</td>
+        </tr>
+        {% endfor %}
+    </table>
     <script>
         const navbar = document.querySelector (".navbar");
         const menuButton = document.querySelector (".menu-button");

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Check License</title>
+</head>
+<body>
+    <h1>Check License</h1>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <p>
+        {{ form.has_license.label }}<br>
+        {{ form.has_license() }}
+      </p>
+      <p>{{ form.submit() }}</p>
+    </form>
+</body>
+</html>

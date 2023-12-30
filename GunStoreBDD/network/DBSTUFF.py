@@ -1,5 +1,3 @@
-# db_config.py
-
 DRIVER_NAME = 'ODBC Driver 17 for SQL Server'
 SERVER_NAME = 'SCHOOL594B'
 DATABASE_NAME = 'GunStore'

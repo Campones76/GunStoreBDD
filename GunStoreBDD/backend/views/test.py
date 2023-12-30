@@ -16,7 +16,8 @@ def generate():
    cursor = cnxn.cursor()
 
    # Execute a SQL query
-   cursor.execute("SELECT * FROM Customer")
+   #cursor.execute("SELECT * FROM Customer")
+   cursor.execute("SELECT * FROM dbo.Firearms")
 
    # Fetch all rows from the last executed statement
    rows = cursor.fetchall()

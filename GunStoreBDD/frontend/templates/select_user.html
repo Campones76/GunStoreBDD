@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select User</title>
+</head>
+<body>
+  <h1>Select User</h1>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    <p>
+      {{ form.user.label }}<br>
+      {{ form.user() }}
+    </p>
+    <p>{{ form.submit() }}</p>
+  </form>
+</body>
+</html>
