@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Firearm</title>
+</head>
+<body>
+    <h1>Select Firearm</h1>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <p>
+        {{ form.firearm.label }}<br>
+        {{ form.firearm() }}
+      </p>
+      <p>{{ form.submit() }}</p>
+    </form>
+</body>
+</html>

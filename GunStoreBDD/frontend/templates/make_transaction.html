@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Make Transaction</title>
+</head>
+<body>
+    <h1>Make Transaction</h1>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <p>
+        {{ form.purchase_invoice.label }}<br>
+        {{ form.purchase_invoice() }}
+      </p>
+      <p>
+        {{ form.total.label }}<br>
+        {{ form.total() }}
+      </p>
+      <p>
+        {{ form.background_check_results.label }}<br>
+        {{ form.background_check_results() }}
+      </p>
+      <p>
+        {{ form.waiting_period_info.label }}<br>
+        {{ form.waiting_period_info() }}
+      </p>
+      <p>
+        {{ form.additional_notes.label }}<br>
+        {{ form.additional_notes() }}
+      </p>
+      <p>{{ form.submit() }}</p>
+    </form>
+</body>
+</html>

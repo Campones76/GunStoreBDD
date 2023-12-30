@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select User</title>
+</head>
+<body>
+    <h1>Select User</h1>
+    <form method="POST" action="/Sales/{{ user.CustomerID }}">
+        <label for="user_id">Select a user:</label>
+        <select name="user_id" id="user_id">
+            {% for user in users %}
+                <option value="{{ user.CustomerID }}">{{ user.UserName }}</option>
+            {% endfor %}
+         </select>
+        <input type="submit" value="Select">
+    </form>
+</body>
+</html>
