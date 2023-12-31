@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Renewals</title>
+    <link rel="stylesheet" href="/static/styles/globals.css" />
+    <link rel="stylesheet" href="/static/styles/tables.css" />
+
+</head>
+<body>
+    <div class="navbar show-menu">
+        <div class="header-inner-content "> 
+            <h1 class="logo"> LOJA DE <span>ARMAS</span> </h1>
+            <nav>
+                <ul>
+                    <li>
+                        {% if current_user.is_authenticated and current_user.Staff %}
+                        <a href="{{url_for('LicenseRenewalView.license_renewal')}}">LEMBRAR RENOVAÇÃO DE LICENÇA</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if current_user.is_authenticated and current_user.Staff %}
+                        <a href="{{url_for('home.index')}}">SAIR DO PAINEL</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if current_user.is_authenticated and current_user.Staff %}
+                        <a href="{{url_for('SigninView.logout')}}">LOGOUT</a>
+                        {% else %}
+                        {% endif %}
+                    </li>
+                </ul>
+            </nav>
+            <div class="nav-icon-container" >
+                <img src="/static/images/cart.png" />
+                <img src="/static/images/menu.png" class="menu-button" />
+            </div>
+         </div>   
+    </div>
+
+    <table>
+        <tr>
+            <th>Customer Name</th>
+            <th>Contact</th>
+            <th>Renewal Date</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.FullName }}</td>
+            <td>{{ user.Contact }}</td>
+            <td>{{ user.RenewalDate }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <script>
+        const navbar = document.querySelector (".navbar");
+        const menuButton = document.querySelector (".menu-button");
+
+        menuButton.addEventListener("click", () => {
+            navbar.classList.toggle("show-menu");
+
+        });
+    </script>
+</body>
+</html>
