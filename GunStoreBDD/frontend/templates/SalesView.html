@@ -1,18 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Select User</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Armas</title>
+    <link rel="stylesheet" href="/static/styles/globals.css" />
+    <link rel="stylesheet" href="/static/styles/tables.css" />
+
 </head>
 <body>
-    <h1>Select User</h1>
-    <form method="POST" action="/Sales/{{ user.CustomerID }}">
-        <label for="user_id">Select a user:</label>
-        <select name="user_id" id="user_id">
-            {% for user in users %}
-                <option value="{{ user.CustomerID }}">{{ user.UserName }}</option>
-            {% endfor %}
-         </select>
-        <input type="submit" value="Select">
-    </form>
+    <div class="navbar show-menu">
+        <div class="header-inner-content "> 
+            <h1 class="logo"> LOJA DE <span>ARMAS</span> </h1>
+            <nav>
+                <ul>
+                    <li>
+                        {% if current_user.is_authenticated and current_user.Staff %}
+                        <a href="{{url_for('SelectUser.select_user')}}">NOVA VENDA</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if current_user.is_authenticated and current_user.Staff %}
+                        <a href="{{url_for('SelectUserTransactions.select_user')}}">Filtrar por utilizador</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if current_user.is_authenticated and current_user.Staff %}
+                        <a href="{{url_for('LicenseRenewalView.license_renewal')}}">LEMBRAR RENOVAÇÃO DE LICENÇA</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if current_user.is_authenticated and current_user.Staff %}
+                        <a href="{{url_for('home.index')}}">SAIR DO PAINEL</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if current_user.is_authenticated and current_user.Staff %}
+                        <a href="{{url_for('SigninView.logout')}}">LOGOUT</a>
+                        {% else %}
+                        {% endif %}
+                    </li>
+                </ul>
+            </nav>
+            <div class="nav-icon-container" >
+                <img src="/static/images/cart.png" />
+                <img src="/static/images/menu.png" class="menu-button" />
+            </div>
+         </div>   
+    </div>
+
+    <table>
+        <tr>
+            <th>CustomerID</th>
+            <th>FirearmID</th>
+            <th>TimeOfPurchase</th>
+            <th>PurchaseInvoice</th>
+            <th>BackgroundCheckResults</th>
+            <th>WaitingPeriodInfo</th>
+            <th>AdditionalNotes</th>
+            <th>Total</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row.CustomerID }}</td>
+            <td>{{ row.FirearmID }}</td>
+            <td>{{ row.TimeOfPurchase }}</td>
+            <td>{{ row.PurchaseInvoice }}</td>
+            <td>{{ row.BackgroundCheckResults }}</td>
+            <td>{{ row.WaitingPeriodInfo }}</td>
+            <td>{{ row.AdditionalNotes }}</td>
+            <td>{{ row.Total }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <script>
+        const navbar = document.querySelector (".navbar");
+        const menuButton = document.querySelector (".menu-button");
+
+        menuButton.addEventListener("click", () => {
+            navbar.classList.toggle("show-menu");
+
+        });
+    </script>
 </body>
 </html>

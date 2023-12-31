@@ -14,7 +14,7 @@
                 <ul>
                     <li>
                         {% if current_user.is_authenticated and current_user.Staff %}
-                        <a href="{{url_for('SelectUser.select_user')}}">VENDAS</a>
+                        <a href="{{url_for('SalesView.salesview')}}">VENDAS</a>
                         {% endif %}
                     </li>
                     <li>

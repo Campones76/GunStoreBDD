@@ -19,6 +19,8 @@ from backend.views.CheckLicense import *
 from backend.views.EnterLicenseInfo import *
 from backend.views.TransactionCompleted import *
 from backend.views.MakeTransaction import *
+from backend.views.SelectUserTransactions import *
+from backend.views.FilteredSalesView import *
 
 
 app = Flask(__name__, template_folder='../frontend/templates', static_folder='../frontend/static')
@@ -40,7 +42,7 @@ app.register_blueprint(signup_bp)
 app.register_blueprint(tosviewer_bp)
 app.register_blueprint(adminchecker_bp)
 app.register_blueprint(StaffPanel_bp)
-#app.register_blueprint(salesview_bp)
+app.register_blueprint(salesview_bp)
 app.register_blueprint(license_renewal_bp)
 app.register_blueprint(InventoryView_bp)
 app.register_blueprint(AddInventoryView_bp)
@@ -51,6 +53,8 @@ app.register_blueprint(check_license_bp)
 app.register_blueprint(enter_license_info_bp)
 app.register_blueprint(transaction_completed_bp)
 app.register_blueprint(make_transaction_bp)
+app.register_blueprint(SelectUserTransactions_bp)
+app.register_blueprint(filteredsalesview_bp)
 
 
 if __name__ == '__main__':
