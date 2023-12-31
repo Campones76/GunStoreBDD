@@ -4,3 +4,7 @@
 # Ignore .venv and venv folders
 .venv/
 venv/
+*.pyc
+*.pyc
+*.pyc
+*.pyc
