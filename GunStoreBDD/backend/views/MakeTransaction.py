@@ -18,5 +18,6 @@ def make_transaction():
         cursor.execute("UPDATE Firearms SET CustomerID = ?, OwnershipJustification = ?, Bought = 1 WHERE FirearmID = ?", session['user_id'], form.OwnershipJustification.data ,session['firearm_id'])
         cursor.execute("INSERT INTO CustomerFirearms (CustomerID, FirearmID) VALUES (?, ?)", session['user_id'], session['firearm_id'])
         conn.commit()
+        conn.close()
         return redirect(url_for('TransactionCompleted.transaction_complete'))
     return render_template('make_transaction.html', form=form)

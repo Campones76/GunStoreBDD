@@ -14,6 +14,7 @@ def check_license():
             cursor = conn.cursor()
             cursor.execute("UPDATE Customer SET HasLicense = 1 WHERE CustomerID = ?", session['user_id'])
             conn.commit()
+            conn.close()
             return redirect(url_for('EnterLicenseInfo.enter_license_info'))
         else:
             return render_template('no_license.html')

@@ -23,3 +23,6 @@ def generate_phone_number(country):
 
 
 print(generate_phone_number('nl_BE'))
+print(generate_phone_number('pt_PT'))
+print(generate_phone_number('en_US'))
+print(generate_phone_number('en_UK'))

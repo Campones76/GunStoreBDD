@@ -24,10 +24,9 @@ def license_renewal():
     WHERE lr.RenewalDate BETWEEN '{current_date}' AND '{next_month}'
     """
 
-
     cursor.execute(query)
-
     users = cursor.fetchall()
+    conn.close()
     # Now 'users' contains all users whose license renewal date is within the next month, along with the associated customer names
     # You can display this data in your template as needed
     return render_template('LicenseRenewalList.html', users=users)

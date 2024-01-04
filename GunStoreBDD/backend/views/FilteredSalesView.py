@@ -7,6 +7,9 @@ filteredsalesview_bp = Blueprint('FilteredSalesView', __name__)
 def filteredsalesview():
     conn = pyodbc.connect(connection_string)
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM dbo.Transactions WHERE CustomerID = ?", session['user_id'])
+    query = "SELECT t.*, c.FullName FROM Transactions t INNER JOIN Customer c ON t.CustomerID = c.CustomerID WHERE Deactivated = 0 AND t.CustomerID = ?"
+    params = (session['user_id'],)
+    cursor.execute(query, params)
     data = cursor.fetchall()
+    conn.close()
     return render_template('SalesView.html', data=data)

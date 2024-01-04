@@ -15,5 +15,6 @@ def enter_license_info():
         cursor.execute("INSERT INTO LicenseRenewals (CustomerID, RenewalDate, ExpiryDate, RenewalProcessRecords) VALUES (?, ?, ?, ?)",
                        session['user_id'], form.renewal_date.data, form.expiry_date.data, form.renewal_process_records.data)
         conn.commit()
+        conn.close()
         return redirect(url_for('MakeTransaction.make_transaction'))
     return render_template('enter_license_info.html', form=form)

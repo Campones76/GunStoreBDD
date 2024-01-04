@@ -36,6 +36,7 @@ def login():
         cursor = conn.cursor()
         cursor.execute('SELECT * FROM dbo.Customer WHERE UserName = ?', (username,))
         account = cursor.fetchone()
+        conn.close()
         if account:
             if account.Deactivated == 1:
                 msg = 'This user account was deactivated and its personal data removed because the user made a GDPR takedown request.'

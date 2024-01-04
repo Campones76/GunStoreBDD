@@ -45,14 +45,14 @@
                 </label>
                 <div class="input-wrapper">
                     <input type="hidden" name="countryCode" id="countryCode">
-                    <input type="tel" name="contact" id="contact" required>
+                    <input type="tel" name="contact" placeholder="Contact" id="contact" required>
                 </div>                
                 <label for="tin">
                     <i class="fa fa-id-card"></i>
                 </label>
-                <input type="text" name="tin" placeholder="TIN" id="tin" required>
+                <input type="text" name="tin" placeholder="NIF" id="tin" required>
                 <div style="color: #595959;font-size: 11px;font-family: Arial;padding-top:11px;">
-                    By creating an account you agree to our <a style="color: rgb(48, 48, 241) !important;font-size: 11px;" href="{{url_for('TosViewer.tosviewer')}}">Terms and Conditions</a>.
+                    By creating an account you agree to our <a style="color: rgb(48, 48, 241) !important;font-size: 11px;" href="{{url_for('TosViewer.tosviewer')}}"target="_blank">Terms and Conditions</a>.
                 </div>
                 <div class="msg">{{ msg }}</div>
                 <input type="submit" value="Register">

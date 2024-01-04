@@ -17,7 +17,7 @@ body {
 }
 .login h1, .register h1 {
     text-align: center;
-    color: brown;
+    color: rgb(12, 107, 254);
     font-size: 24px;
     padding: 20px 0 20px 0;
     border-bottom: 1px solid #dee0e4;
@@ -34,11 +34,11 @@ body {
     font-weight: bold;
 }
 .login .links a:hover, .register .links a:hover {
-    color: brown;
+    color: rgb(12, 107, 254);
 }
 .login .links a.active, .register .links a.active {
-    border-bottom: 3px solid brown;
-    color:brown;
+    border-bottom: 3px solid rgb(12, 107, 254);
+    color:rgb(12, 107, 254);
 }
 .login form, .register form {
     display: flex;
@@ -52,7 +52,7 @@ body {
     align-items: center;
     width: 50px;
     height: 50px;
-    background-color:brown;
+    background-color:rgb(12, 107, 254);
     color: #ffffff;
 }
 .login form input[type="password"], .login form input[type="text"], .login form input[type="email"], .register form input[type="password"], .register form input[type="text"], .register form input[type="email"],
@@ -73,7 +73,7 @@ body {
     width: 100%;
     padding: 15px;
     margin-top: 20px;
-    background-color: brown;
+    background-color: rgb(12, 107, 254);
     border: 0;
     cursor: pointer;
     font-weight: bold;
@@ -81,7 +81,7 @@ body {
     transition: background-color 0.2s;
 }
 .login form input[type="submit"]:hover, .register form input[type="submit"]:hover {
-    background-color:brown;
+    background-color:rgb(12, 107, 254);
     transition: background-color 0.2s;
 }
 .navtop {

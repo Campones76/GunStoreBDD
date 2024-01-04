@@ -13,4 +13,5 @@ def inventory():
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM dbo.Firearms WHERE bought = 0")
     data = cursor.fetchall()
+    conn.close()
     return render_template('InventoryView.html', data=data)  # replace 'your_html_file.html' with the name of your HTML file

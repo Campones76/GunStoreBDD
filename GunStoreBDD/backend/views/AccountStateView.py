@@ -35,5 +35,6 @@ def delete_account():
         WHERE CustomerID = ?
     """, user_id)
     conn.commit()
+    conn.close()
     logout_user()
     return redirect(url_for('home.index'))

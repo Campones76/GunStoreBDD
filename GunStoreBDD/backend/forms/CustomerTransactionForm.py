@@ -4,19 +4,14 @@ from wtforms.validators import DataRequired
 from network.DBSTUFF import connection_string
 import pyodbc
 
-# Establish a database connection
-conn = pyodbc.connect(connection_string)
-
-# Create a cursor
-cursor = conn.cursor()
-
-# Fetch the non-staff users
-cursor.execute("SELECT CustomerID, UserName FROM Customer WHERE Staff = 0")
-users = cursor.fetchall()
-
-# Create a list of tuples for the select field choices
-choices = [(user.CustomerID, user.UserName) for user in users]
-
 class UserTransactionForm(FlaskForm):
-    user = SelectField('User', choices=choices, validators=[DataRequired()])
+    user = SelectField('User', validators=[DataRequired()])
     submit = SubmitField('Select')
+
+    def __init__(self, *args, **kwargs):
+        super(UserTransactionForm, self).__init__(*args, **kwargs)
+        conn = pyodbc.connect(connection_string)
+        cursor = conn.cursor()
+        cursor.execute("SELECT CustomerID, UserName FROM Customer WHERE Staff = 0 AND Deactivated = 0")
+        users = cursor.fetchall()
+        self.user.choices = [(user.CustomerID, user.UserName) for user in users]

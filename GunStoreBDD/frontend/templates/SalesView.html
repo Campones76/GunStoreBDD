@@ -21,17 +21,17 @@
                     </li>
                     <li>
                         {% if current_user.is_authenticated and current_user.Staff %}
-                        <a href="{{url_for('SelectUserTransactions.select_user')}}">Filtrar por utilizador</a>
+                        <a href="{{url_for('SelectUserTransactions.select_user')}}">FILTRAR POR UTILIZADOR</a>
                         {% endif %}
                     </li>
                     <li>
                         {% if current_user.is_authenticated and current_user.Staff %}
-                        <a href="{{url_for('LicenseRenewalView.license_renewal')}}">LEMBRAR RENOVAÇÃO DE LICENÇA</a>
+                        <a href="{{url_for('excelgen.generate')}}">GERAR COPIA DE VENDAS</a>
                         {% endif %}
                     </li>
                     <li>
                         {% if current_user.is_authenticated and current_user.Staff %}
-                        <a href="{{url_for('home.index')}}">SAIR DO PAINEL</a>
+                        <a href="{{url_for('StaffPanel.staffpanel')}}">VOLTAR</a>
                         {% endif %}
                     </li>
                     <li>
@@ -51,7 +51,7 @@
 
     <table>
         <tr>
-            <th>CustomerID</th>
+            <th>Customer</th>
             <th>FirearmID</th>
             <th>TimeOfPurchase</th>
             <th>PurchaseInvoice</th>
@@ -62,7 +62,7 @@
         </tr>
         {% for row in data %}
         <tr>
-            <td>{{ row.CustomerID }}</td>
+            <td>{{ row.FullName }}</td>
             <td>{{ row.FirearmID }}</td>
             <td>{{ row.TimeOfPurchase }}</td>
             <td>{{ row.PurchaseInvoice }}</td>

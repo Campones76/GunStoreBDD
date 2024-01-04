@@ -62,6 +62,7 @@ def register():
             cursor.execute('INSERT INTO dbo.Customer VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (username, fullname, dob, email, hashed_password, address, full_number, tin, Staff, HasLicense, Deactivated))
             #cursor.execute('INSERT INTO dbo.Admin VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', (username, password, email, fullname, dob, address, contact, tin, staff,))
             cursor.commit()
+            conn.close()
             msg = 'You have successfully registered!'
     elif request.method == 'POST':
         # Form is empty... (no POST data)

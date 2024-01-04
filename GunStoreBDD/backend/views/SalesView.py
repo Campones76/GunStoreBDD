@@ -7,7 +7,17 @@ salesview_bp = Blueprint('SalesView', __name__)
 def salesview():
     conn = pyodbc.connect(connection_string)
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM dbo.Transactions")
+    #cursor.execute("SELECT * FROM dbo.Transactions")
+    # write your SQL query
+    query = f"""
+    SELECT t.*, c.FullName 
+    FROM Transactions t
+    INNER JOIN Customer c ON t.CustomerID = c.CustomerID
+    WHERE Deactivated = 0
+    """
+    cursor.execute(query)
     data = cursor.fetchall()
-    #return render_template('InventoryView.html', data=data)  # replace 'your_html_file.html' with the name of your HTML file
+    conn.close()
+    #cursor.execute("SELECT * FROM dbo.Transactions")
+    #return render_template('InventoryView.html', data=data)
     return render_template('SalesView.html', data=data)

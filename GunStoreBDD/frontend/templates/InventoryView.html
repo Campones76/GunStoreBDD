@@ -16,22 +16,17 @@
                 <ul>
                     <li>
                         {% if current_user.is_authenticated and current_user.Staff %}
-                        <a href="{{url_for('SelectUser.select_user')}}">VENDAS</a>
-                        {% endif %}
-                    </li>
-                    <li>
-                        {% if current_user.is_authenticated and current_user.Staff %}
-                        <a href="{{url_for('LicenseRenewalView.license_renewal')}}">LEMBRAR RENOVAÇÃO DE LICENÇA</a>
-                        {% endif %}
-                    </li>
-                    <li>
-                        {% if current_user.is_authenticated and current_user.Staff %}
                         <a href="{{url_for('AddInventoryView.add_inventory')}}">ADICIONAR INVENTÁRIO</a>
                         {% endif %}
                     </li>
                     <li>
                         {% if current_user.is_authenticated and current_user.Staff %}
-                        <a href="{{url_for('home.index')}}">SAIR DO PAINEL</a>
+                        <a href="{{url_for('excelgen.generateinv')}}">GERAR COPIA DE INVENTÁRIO</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if current_user.is_authenticated and current_user.Staff %}
+                        <a href="{{url_for('StaffPanel.staffpanel')}}">VOLTAR</a>
                         {% endif %}
                     </li>
                     <li>
