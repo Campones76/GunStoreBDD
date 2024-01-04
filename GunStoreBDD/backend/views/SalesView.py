@@ -13,7 +13,6 @@ def salesview():
     SELECT t.*, c.FullName 
     FROM Transactions t
     INNER JOIN Customer c ON t.CustomerID = c.CustomerID
-    WHERE Deactivated = 0
     """
     cursor.execute(query)
     data = cursor.fetchall()
