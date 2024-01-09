@@ -12,18 +12,29 @@ actor StoreStaff as s #FF7700
 rectangle "Gun Store" {
   usecase "View Weapons" as UC1
   usecase "Create Account" as UC2
-  usecase "Make Purchase" as UC3
-  usecase "Renew License" as UC4
-  usecase "Warn customer about license renewal" as UC5
-  usecase "Manage Inventory" as UC6
+  usecase "Delete Account" as UC3
+  usecase "Make Reservation" as UC4
+  usecase "Purchase" as UC5
+  usecase "Make Purchase" as UC6
+  usecase "Renew License" as UC7
+  usecase "See up-and-coming license renewal dates" as UC8
+  usecase "Warn customer about license renewal" as UC10
+  usecase "Manage Inventory" as UC9
+  
 
-  c --> UC1
-  c --> UC2
-  c --> UC3
+  c -[#blue]-> UC1
+  c -[#blue]-> UC2
+  c -[#blue]-> UC3
   c --> UC4
+  c -[#00fff7]-> UC5
+  c -[#00fff7]-> UC7
 
-  s --> UC3
-  s --> UC5
-  s --> UC6
+  s -[#blue]-> UC1
+  s -[#blue]-> UC6
+  s -[#blue]-> UC8
+  s -[#blue]-> UC9
+  s -[#00fff7]-> UC10
+
+  UC10 ..> UC8 : includes
 }
 @enduml

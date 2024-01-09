@@ -2,16 +2,21 @@
 <html>
 <head>
   <title>Check License</title>
+  <link rel="stylesheet" href="/static/styles/selectuser.css" />
 </head>
 <body>
+  <div class="selectuserbox">
     <h1>Check License</h1>
-    <form method="POST">
-      {{ form.hidden_tag() }}
-      <p>
-        {{ form.has_license.label }}<br>
-        {{ form.has_license() }}
-      </p>
-      <p>{{ form.submit() }}</p>
-    </form>
+    <div class=insertdatabox>
+      <form method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+          {{ form.has_license.label }}<br>
+          {{ form.has_license() }}
+        </p>
+        <p>{{ form.submit() }}</p>
+      </form>
+    </div>
+  </div>
 </body>
 </html>

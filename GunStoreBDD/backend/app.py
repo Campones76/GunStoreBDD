@@ -25,6 +25,8 @@ from backend.views.TransactionCompleted import *
 from backend.views.MakeTransaction import *
 from backend.views.SelectUserTransactions import *
 from backend.views.FilteredSalesView import *
+from backend.views.Products import *
+from backend.views.Sobre import *
 
 
 
@@ -78,7 +80,8 @@ app.register_blueprint(transaction_completed_bp)
 app.register_blueprint(make_transaction_bp)
 app.register_blueprint(SelectUserTransactions_bp)
 app.register_blueprint(filteredsalesview_bp)
-
+app.register_blueprint(products_page)
+app.register_blueprint(sobre_page)
 
 if __name__ == '__main__':
     app.run(debug=True)

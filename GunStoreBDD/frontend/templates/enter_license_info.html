@@ -2,24 +2,29 @@
 <html>
 <head>
   <title>Enter License Information</title>
+  <link rel="stylesheet" href="/static/styles/selectuser.css" />
 </head>
 <body>
+  <div class="enterlicenseinfo">
     <h1>Enter License Information</h1>
-    <form method="POST">
-      {{ form.hidden_tag() }}
-      <p>
-        {{ form.renewal_date.label }}<br>
-        {{ form.renewal_date() }}
-      </p>
-      <p>
-        {{ form.expiry_date.label }}<br>
-        {{ form.expiry_date() }}
-      </p>
-      <p>
-        {{ form.renewal_process_records.label }}<br>
-        {{ form.renewal_process_records() }}
-      </p>
-      <p>{{ form.submit() }}</p>
-    </form>
+    <div class="insertdatabox">
+      <form method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+          {{ form.renewal_date.label }}<br>
+          {{ form.renewal_date() }}
+        </p>
+        <p>
+          {{ form.expiry_date.label }}<br>
+          {{ form.expiry_date() }}
+        </p>
+        <p>
+          {{ form.renewal_process_records.label }}<br>
+          {{ form.renewal_process_records() }}
+        </p>
+        <p>{{ form.submit() }}</p>
+      </form>
+    </div>
+  </div>
 </body>
 </html>

@@ -16,11 +16,6 @@
                 <ul>
                     <li>
                         {% if current_user.is_authenticated and current_user.Staff %}
-                        <a href="{{url_for('LicenseRenewalView.license_renewal')}}">LEMBRAR RENOVAÇÃO DE LICENÇA</a>
-                        {% endif %}
-                    </li>
-                    <li>
-                        {% if current_user.is_authenticated and current_user.Staff %}
                         <a href="{{url_for('StaffPanel.staffpanel')}}">VOLTAR</a>
                         {% endif %}
                     </li>
@@ -33,7 +28,6 @@
                 </ul>
             </nav>
             <div class="nav-icon-container" >
-                <img src="/static/images/cart.png" />
                 <img src="/static/images/menu.png" class="menu-button" />
             </div>
          </div>   

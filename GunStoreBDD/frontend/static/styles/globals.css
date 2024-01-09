@@ -44,6 +44,7 @@ nav ul{
     display: flex;
     list-style: none;
     align-items: center;
+    margin-left: 620px;
 
 }
 
@@ -129,15 +130,17 @@ header{
     background-color: #004c94;
 }
 
-.header-bottom-side-right{
-    flex-basis: 50%;
+.header-bottom-side{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between; 
+    padding: 1rem;
 }
 
 .header-bottom-side-right img{
-    width: 120%;
+    max-width: 100%; 
+    max-height: 620px; /* Set a maximum height for the image */
+    width: 1400px; /* Maintain aspect ratio */
 }
   
 
@@ -188,4 +191,22 @@ header{
 .page-inner-content{
     max-width: 1280px;
     margin: 0 auto;
+}
+
+.adminpanelbackground{
+    background: url('/static/images/StaffMainPageBack.jpg');
+    background-position: center;
+    background-size: 90%;
+    width: auto; 
+    height: 590px; 
+    z-index: -1;
+}
+
+.indexbackground{
+    background: url('/static/images/indexbackground.png');
+    background-position: center;
+    background-size: 70%;
+    width: auto; 
+    height: 590px; 
+    z-index: -1;
 }

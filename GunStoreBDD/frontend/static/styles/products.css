@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #181717;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.container {
+    background: url('/static/images/products.jpg') no-repeat center center fixed;
+    background-size: cover;
+    max-width: 1250px;
+    margin: 20px auto;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    backdrop-filter: blur(10px);
+}
+
+.column {
+    background-color: rgba(255, 255, 255, 0.692);
+    max-height: 900px; 
+    backdrop-filter: blur(15px);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.title{
+    text-align: center;
+    font-size: 1em;
+}
+
+.balas{
+    background: url('/static/images/balas-products.png') center ;
+    min-height: 300px; 
+    background-size: cover;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pagetitle{
+    text-align: center;
+    font-size: 21px;
+}
+
+.glock{
+    background: url('/static/images/glock-products.jpg') center ;
+    min-height: 300px; 
+    background-size: cover;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.barrette{
+    background: url('/static/images/barrette-products.jpg') center ;
+    min-height: 300px; 
+    background-size: cover;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
